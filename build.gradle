@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'com.intuit.karate:karate-junit5:1.0.1'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+// Evitar que Gradle falle si src/main/java no existe
+sourceSets {
+    main {
+        java {
+            srcDirs = []
+        }
+    }
+}
